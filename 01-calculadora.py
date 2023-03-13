@@ -1,5 +1,3 @@
-# lo primero es obtener una forma para obtener datos que ingrese el usuario
-
 n1 = input("ingresa primero número")
 n2 = input("ingresa segundo número")
 
@@ -12,8 +10,6 @@ suma = n1 + n2
 resta = n1 - n2
 multi = n1 * n2
 division = n1 / n2
-
-# print(f {division} {es el resultado de la dividir}) MAL
 
 mensaje = f"""
 Para los números {n1} y {n2}.
