@@ -1,4 +1,4 @@
-n1 = input("ingresa primero número")
+n1 = input("ingresa primer número")
 n2 = input("ingresa segundo número")
 
 print(n1, n2)
