@@ -7,31 +7,32 @@ print("Welcome to the calculator")
 print("To exit type exit")
 print("You can add, subtract, divide or multiply")
 
-resultado = ""
+result = ""
 
 while True:
-    if not resultado:
-        resultado = input("ingrese número")
-        if resultado.lower() == "salir":
+    if not result:
+        result = input("Enter number")
+        if result.lower() == "Exit":
             break
-        resultado = int(resultado)
-    op = input("ingresa operación: ")
-    if op.lower() == "salir":
+        result = int(result)
+    op = input("Enter operation: ")
+    if op.lower() == "Exit":
         break
-    n2 = input("ingresa el siguiente número")
-    if n2.lower() == "salir":
+    n2 = input("Enter next number")
+    if n2.lower() == "Exit":
         break
     n2 = int(n2)
 
-    if op.lower() == "suma":
-        resultado += n2
-    elif op.lower() == "resta":
-        resultado -= n2
-    elif op.lower() == "dividir":
-        resultado /= n2
-    elif op.lower() == "multiplicar":
-        resultado *= n2
+    if op.lower() == "Sum":
+        result += n2
+    elif op.lower() == "Subtraction":
+        result -= n2
+    elif op.lower() == "Divide":
+        result /= n2
+    elif op.lower() == "Mulitply":
+        result *= n2
     else:
-        print("Operación no válida")
+        print("Non-valid operation")
         break
-    print(f"El resultado es {resultado}")
+
+    print(f"The result {result}")
