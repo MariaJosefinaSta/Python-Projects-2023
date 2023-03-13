@@ -14,3 +14,20 @@ while True:
         resultado = input("ingrese número")
         if resultado.lower() == "salir":
             break
+        resultado = int(resultado)
+    op = input("ingresa operación")
+    if op.lower() == "salir":
+        break
+    n2 = input("ingresa el siguiente número")
+    if n2.lower() == "salir":
+        break
+    n2 = int(n2)
+
+    if op.lower() == "suma":
+        resultado += n2
+    elif op.lower() == "resta":
+        resultado -= n2
+    elif op.lower() == "dividir":
+        resultado /= n2
+    elif op.lower() == "multiplicar":
+        resultado *= n2
