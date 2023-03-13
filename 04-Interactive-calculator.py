@@ -7,7 +7,7 @@ print("Welcome to the calculator")
 print("To exit type exit")
 print("You can add, subtract, divide or multiply")
 
-resultado = " "
+resultado = ""
 
 while True:
     if not resultado:
