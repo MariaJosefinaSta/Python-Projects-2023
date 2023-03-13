@@ -15,7 +15,7 @@ while True:
         if resultado.lower() == "salir":
             break
         resultado = int(resultado)
-    op = input("ingresa operación")
+    op = input("ingresa operación: ")
     if op.lower() == "salir":
         break
     n2 = input("ingresa el siguiente número")
@@ -31,3 +31,7 @@ while True:
         resultado /= n2
     elif op.lower() == "multiplicar":
         resultado *= n2
+    else:
+        print("Operación no válida")
+        break
+    print(f"El resultado es {resultado}")
