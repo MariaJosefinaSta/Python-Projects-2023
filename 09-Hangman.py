@@ -23,7 +23,16 @@ def hangman():
     alphabet = set(string.ascii_uppercase)
     used_letters = set()  # Pista al usuario de lo que ha adivinado
 
+    # Mientras la longitud de las palabras sea mayor que 0 continuar iterando
     while len(word_letters) > 0:
+        # Convierte la lista en una cadena separada por comas o espacio
+        print('You have used these letters: ', ' '.join(used_letters))
+
+        # Crea lista donde se muestra cada letra que adivinó y las letras que no adivinó como guiones
+        word_list = [
+            letter if letter in used_letters else '-' for letter in word]
+        # toma la lista anterior y la une con un espacio para crear una cadena usando esa lista
+        print('Current word: ', ' '.join(word_list))
 
         user_letter = input('Guess a letter: ').upper()
         # Si este es un carácter válido en el alfabeto y aún no lo he usado
@@ -31,6 +40,7 @@ def hangman():
             used_letters.add(user_letter)  # Agregarlo a este conjunto
             if user_letter in word_letters:  # Si la letra que acabo de adivinar está en la palabra, borrar las palabras que no la tengan
                 word_letters.remove(user_letter)
+                print('')
 
         elif user_letter in used_letters:
             print('You have already used that character')
