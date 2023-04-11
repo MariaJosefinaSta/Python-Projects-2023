@@ -87,3 +87,5 @@ for amigo in ingredientes_amigos:
             ingredientes_favoritos.remove(ingrediente)
 # Imprime la lista con los ingredientes favoritos que no se repitan en la lista de los ingredientes de los amigos
 print(ingredientes_favoritos)
+
+(!(! True and False) and (False and True)
