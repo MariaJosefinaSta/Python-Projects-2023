@@ -4,9 +4,9 @@ from collections import deque
 turno = deque(["0", "x"])  # Objeto deque que contiene dos elementos(jugadores)
 
 tablero = [
-    [' ', ' ', ' '],
-    [' ', ' ', ' '],
-    [' ', ' ', ' ']  # Lista con listas que contiene cadenas de caracteres
+    [" ", " ", " "],
+    [" ", " ", " "],
+    [" ", " ", " "]  # Lista con listas que contiene cadenas de caracteres
 ]
 
 
@@ -16,7 +16,7 @@ def rotar_turno():
 
 
 def mostrar_tablero():  # Funcion que muestra tablero
-    print('')
+    print(" ")
     for fila in tablero:  # Cada elemento es una lista
         print(fila)
 
@@ -36,15 +36,20 @@ def posicion_correcta(posicion):
     return False
 
 
+# Posición esuna lista que tiene dos elementos, 0 y 1 que indican la fila y la columna donde se esta jugando
+def actualizar_tablero(posicion, juador):
+    tablero[posicion[0]][posicion[1]] = juador
+
+
 def juego():  # Función que llama a la función mostrar tablero
     mostrar_tablero()
-    jugador = rotar_turno  # Resultado de la función rotar_turno
+    jugador = rotar_turno()  # Resultado de la función rotar_turno
     while True:  # Ciclo while infinito, para salir SALIR
         posicion = input(
-            f"Juega {jugador}. Elige posición: Fila o columna de 1 a 3")
+            f"Juega {jugador}. Elige posición: Fila o columna de 1 a 3: ")
         if posicion == 'salir':  # Si usa en la variable posicion 'salir' entonces break
             break
-        jugador = rotar_turno()
+
         # Try: Captura cualquier error cuando se procese la posicion(ya que acepta cualquier número) que el usuario ingresó
         try:
             posicion_l = procesar_posicion(posicion)
@@ -53,6 +58,11 @@ def juego():  # Función que llama a la función mostrar tablero
             continue
         if posicion_correcta(posicion_l):
             print("Correcta")
+            # Si la posición es correcta entonces debemos actualizar el tablero indicando la posición que se jugó y el jugador que lo hizo
+            actualizar_tablero(posicion_l, jugador)
+            mostrar_tablero()
+            jugador = rotar_turno()
+
         else:
             print("incorrecta")
 
