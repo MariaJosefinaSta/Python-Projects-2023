@@ -49,12 +49,12 @@ def juego():  # Función que llama a la función mostrar tablero
         try:
             posicion_l = procesar_posicion(posicion)
         except:
-            print(f'Error, posicion {posicion} no es válida')
+            print(f"Error, posicion {posicion} no es válida")
             continue
         if posicion_correcta(posicion_l):
-            print('Correcta')
+            print("Correcta")
         else:
-            print('incorrecta')
+            print("incorrecta")
 
 
 juego()
