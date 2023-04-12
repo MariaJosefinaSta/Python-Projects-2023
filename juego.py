@@ -41,6 +41,20 @@ def actualizar_tablero(posicion, juador):
     tablero[posicion[0]][posicion[1]] = juador
 
 
+# Esta función debe evaluar si el juador tiene tres valores iguales en una fila, columna o diagonal
+def ha_ganado(j):
+    # Revisa filas
+    if tablero[0] == [j, j, j] or tablero[1] == [j, j, j] or tablero[2] == [j, j, j]
+    return True
+    # Fila [] columna []
+    elif tablero[0][0] == j and tablero[1][0] == j and tablero[2][0] == j
+    return True
+    elif tablero[0][1] == j and tablero[1][1] == j and tablero[2][1] == j
+    return True
+    elif tablero[0][2] == j and tablero[1][2] == j and tablero[2][2] == j
+    return True
+
+
 def juego():  # Función que llama a la función mostrar tablero
     mostrar_tablero()
     jugador = rotar_turno()  # Resultado de la función rotar_turno
@@ -61,8 +75,12 @@ def juego():  # Función que llama a la función mostrar tablero
             # Si la posición es correcta entonces debemos actualizar el tablero indicando la posición que se jugó y el jugador que lo hizo
             actualizar_tablero(posicion_l, jugador)
             mostrar_tablero()
-            jugador = rotar_turno()
 
+            if ha_ganado(jugador):
+                # Función para saber si alguien ya ganó
+                print(f"Jugador de {jugador}")
+                break
+            jugador = rotar_turno()
         else:
             print("incorrecta")
 
