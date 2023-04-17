@@ -5,4 +5,19 @@ class TicTacToe:
         self.current_winner = None  # Variable que hace un seguimiento de si hay un ganador
 
     def print_board(self):  # Imprimir tablero
+        # i en rango de 3 a la derecha, i multiplicado por 3, i  más 1: 3 veces
         for row in [self.board[i*3:(i+1)*3]for i in range(3)]:
+            print(" |  " + " |  ".join(row) + " |  ")
+
+    @staticmethod
+    def print_board_nums():
+        number_board = [[str(i) for in range(j*3,), (j+1)*3] for j in range(3)]
+        # indice que solo devuelva qué indices están en las fials para cada una de las filas, 0, 1, 2
+        # 3, 4, 5
+        # 6, 7, 8
+        for row in number_board:
+            prprint(" |  " + " |  ".join(row) + " |  ")
+
+    def aviable_mover(self):
+        # return[]
+        for (i, x) in enumerate(self.board):

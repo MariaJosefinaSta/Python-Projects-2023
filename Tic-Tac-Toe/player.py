@@ -12,9 +12,9 @@ class Player:
         pass
 
 
-class RandomComputerPlayer(Player)
+class RandomComputerPlayer(Player):
 
-   def __init__(self, letter):
+    def __init__(self, letter):
         # La función super() de Python devuelve objetos representados en la clase principal y es muy útil en herencias múltiples y multinivel para encontrar qué clase está extendiendo primero la clase secundaria.
         super().__init__(letter)
 
