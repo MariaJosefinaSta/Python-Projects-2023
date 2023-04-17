@@ -11,14 +11,16 @@ class TicTacToe:
 
     @staticmethod
     def print_board_nums():
-        number_board = [[str(i) for in range(j*3,), (j+1)*3] for j in range(3)]
+        number_board = [[str(i) for i in range(j*3, (j+1)*3)]
+                        for j in range(3)]
         # indice que solo devuelva qué indices están en las fials para cada una de las filas, 0, 1, 2
         # 3, 4, 5
         # 6, 7, 8
         for row in number_board:
-            prprint(" |  " + " |  ".join(row) + " |  ")
+            print(" |  " + " |  ".join(row) + " |  ")
 
     def aviable_mover(self):
+        # Si el spot está vacío que ponga i en ese spot
         return [i for i, spot in enumerate(self.board) if spot == " "]
         # # moves = []
         # for (i, spot) in enumerate(self.board):

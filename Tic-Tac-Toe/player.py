@@ -21,10 +21,23 @@ class RandomComputerPlayer(Player):
     def get_move(self, game):
         pass
 
+        # Elige un spot random para el próximo movimiento
+        square = random.choice(game.aviable_moves())
+        return square
+
 
 class HumanPlayer(Player):
     def __init__(self, letter):
         super().__init__(letter)
 
     def get_move(self, game):
-        pass
+        valid_square = False
+        val = None  # Por que el ususuario no ingresó nada, cuando ingrese retorna True
+        while not valid_square:
+            square = input(self.letter + " \"s turn. Input move(0-9): ")
+
+            try:
+                val = int(square)
+                if val not in game.aviable_moves():
+                    # Si el usuario ingresa un valor de otro tipo que no sea entero devuelve errar
+                    raise ValueError
