@@ -19,5 +19,9 @@ class TicTacToe:
             prprint(" |  " + " |  ".join(row) + " |  ")
 
     def aviable_mover(self):
-        # return[]
-        for (i, x) in enumerate(self.board):
+        return [i for i, spot in enumerate(self.board) if spot == " "]
+        # # moves = []
+        # for (i, spot) in enumerate(self.board):
+        #     if spot == " ":
+        #         moves.append(i)
+        # return moves
